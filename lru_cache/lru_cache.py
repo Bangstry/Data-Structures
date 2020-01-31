@@ -47,7 +47,8 @@ class LRUCache:
             return
 
         if self.size == self.limit:
-            del self.storage[self.order.head.value[0]]
+            key = self.order.head.value[2]
+            del self.storage[key]
             self.order.remove_from_head()
             self.size -= 1
         
